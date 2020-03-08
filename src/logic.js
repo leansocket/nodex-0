@@ -2,7 +2,7 @@
 
 const libs = require('nodex-libs');
 
-exports.init = (args) => { };
+exports.init = async (args) => { };
 
 exports.helloWorld = async () => {
     return 'hello world!';

@@ -3,7 +3,7 @@ const http = libs.http;
 
 const logic = require('./logic');
 
-exports.start = function (args) {
+exports.start = async (args) => {
     let app = http.webapp(args);
 
     app.route(router => {

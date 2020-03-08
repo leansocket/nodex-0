@@ -2,4 +2,6 @@
 
 const libs = require('nodex-libs');
 
-exports.init = (args) => { };
+exports.init = async (args) => { 
+    
+};

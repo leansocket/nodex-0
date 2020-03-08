@@ -13,7 +13,7 @@
     "debug:prod": "cross-env NODE_ENV=prod node src/app.js"
   },
   "dependencies": {
-    "nodex-libs": "^1.6.7"
+    "nodex-libs": "^2.0.3"
   },
   "devDependencies": {
     "cross-env": "^5.2.1"
