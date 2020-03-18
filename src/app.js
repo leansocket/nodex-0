@@ -1,16 +1,16 @@
-let libs = require('nodex-libs');
+const libs = require('nodex-libs');
 
 async function main() {
     const args = require("./args");
     libs.log.init(args.app.name);
 
-    let data = require('./data');
+    const data = require('./data');
     await data.init(args.data);
 
-    let logic = require('./logic');
+    const logic = require('./logic');
     await logic.init(args.logic);
 
-    let serv = require('./serv');
+    const serv = require('./serv');
     await serv.start(args.serv);
 }
 

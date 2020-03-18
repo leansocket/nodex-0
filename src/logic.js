@@ -2,8 +2,10 @@
 
 const libs = require('nodex-libs');
 
-exports.init = async (args) => { };
+exports.init = async function (args) { 
+    console.log('logic init.');
+};
 
-exports.helloWorld = async () => {
+exports.helloWorld = async function () {
     return 'hello world!';
 };

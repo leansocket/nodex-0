@@ -3,7 +3,7 @@ const http = libs.http;
 
 const logic = require('./logic');
 
-exports.start = async (args) => {
+exports.start = async function (args) {
     let app = http.webapp(args);
 
     app.route(router => {
@@ -13,7 +13,7 @@ exports.start = async (args) => {
     app.start();
 };
 
-const helloWorld = async ctx => {
+const helloWorld = async function(ctx) {
     let ret = await logic.helloWord();
     http.send(ctx, ret);
 }

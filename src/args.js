@@ -6,12 +6,13 @@ const makeArgsPath = function () {
 };
 
 const argsPath = makeArgsPath();
-if (!fs.existsSync(argsPath)) {
-    console.log(`ignored args file: '${argsPath}' because it is not found.`);
-    return;
+
+if (fs.existsSync(argsPath)) {
+    let data_args = require(argsPath);
+    for (let k in data_args) {
+        exports[k] = data_args[k];
+    }
 }
-    
-let data_args = require(argsPath);
-for (let k in data_args) {
-    exports[k] = data_args[k];
+else {
+    console.log(`ignored args file: '${argsPath}' because it is not found.`);
 }
