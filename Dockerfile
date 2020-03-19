@@ -7,5 +7,5 @@ copy . /workspace
 
 expose 80
 
-run 'npm install'
-run 'npm run prod'
+run npm install
+run npm run prod
