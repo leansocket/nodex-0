@@ -7,13 +7,8 @@ exports.start = async function (args) {
     let app = http.webapp(args);
 
     app.route(router => {
-        router.post('/', helloWorld);
+        router.get('/', http.handler(logic.helloWorld));
     });
 
     app.start();
 };
-
-const helloWorld = async function(ctx) {
-    let ret = await logic.helloWord();
-    http.send(ctx, ret);
-}

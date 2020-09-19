@@ -6,14 +6,14 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "cross-env NODE_ENV=dev nodemon src/app.js",
-    "stage": "pm2 start pm2.stage.json",
-    "prod": "pm2 start pm2.prod.json",
+    "stage": "pm2-runtime start pm2.stage.json",
+    "prod": "pm2-runtime start pm2.prod.json",
     "debug:dev": "cross-env NODE_ENV=dev node src/app.js",
     "debug:stage": "cross-env NODE_ENV=stage node src/app.js",
     "debug:prod": "cross-env NODE_ENV=prod node src/app.js"
   },
   "dependencies": {
-    "nodex-libs": "^2.0.9"
+    "nodex-libs": "^2.0.22"
   },
   "devDependencies": {
     "cross-env": "^5.2.1",
