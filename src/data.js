@@ -2,5 +2,6 @@
 
 exports.init = async function (args) { 
     console.log('data init.');
-    await nodex.mysql.init(args.mysql);
+    const mysql = nodex.libs.mysql;
+    await mysql.init(args.mysql);
 };
