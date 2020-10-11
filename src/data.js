@@ -1,9 +1,10 @@
 'use strict';
 
 const { libs } = nodex;
+const { mysql } = libs;
+
 
 exports.init = async function (args) { 
     console.log('data init.');
-    const mysql = libs.mysql;
     await mysql.init(args.mysql);
 };
