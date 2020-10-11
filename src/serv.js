@@ -1,20 +1,22 @@
 'use strict';
 
+const { libs, runtime } = nodex;
+
 exports.init = async function (args) {
+    libs.log.init(runtime.args.app.name);
     console.log('serv init.');
-    nodex.libs.log.init(nodex.runtime.args.app.name);
     console.log('serv init args:', args);
 }
 
 exports.start = async function (args) {
-    const http = nodex.libs.http;
+    const http = libs.http;
     const app = http.webapp(args);
-    const logic = nodex.runtime.logic;
+    const logic = runtime.logic;
 
     app.route(router => {
         router.get('/', http.handler(logic.helloWorld));
     });
 
     app.start();
-    console.log('runtime:', nodex.runtime);
+    console.log('runtime:', runtime);
 };
