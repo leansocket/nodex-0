@@ -1,7 +1,11 @@
-const libs = require('nodex-libs');
-const mysql = libs.mysql;
+'use strict';
+
+const { libs } = nodex;
+const { mysql } = libs;
+
 
 exports.init = async function (args) { 
-    console.log('data init.');
-    await mysql.init(args.mysql);
+  console.log('data init.');
+  console.log('data init args:', args);
+  await mysql.init(args.mysql);
 };

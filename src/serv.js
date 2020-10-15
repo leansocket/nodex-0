@@ -1,14 +1,19 @@
-const libs = require('nodex-libs');
-const http = libs.http;
+'use strict';
 
-const logic = require('./logic');
+const { libs, runtime } = nodex;
+const { http } = libs;
+const { logic } = runtime;
 
-exports.start = async function (args) {
-    let app = http.webapp(args);
+exports.init = async function (args) {
+  console.log('serv init.');
+  console.log('serv init args:', args);
+  console.log('runtime:', runtime);
 
-    app.route(router => {
-        router.get('/', http.handler(logic.helloWorld));
-    });
+  const app = http.webapp(args);
 
-    app.start();
+  app.route(router => {
+    router.get('/', http.handler(logic.helloWorld));
+  });
+
+  app.start();
 };

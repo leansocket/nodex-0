@@ -1,24 +1,25 @@
 {
   "name": "nodex-0",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "nodex-0 base on nodex-libs",
-  "main": "src/app.js",
   "scripts": {
     "start": "npm run dev",
-    "dev": "cross-env NODE_ENV=dev nodemon src/app.js",
+    "dev": "cross-env NODE_ENV=dev nodemon --exec 'nodex start'",
     "stage": "pm2-runtime start pm2.stage.json",
     "prod": "pm2-runtime start pm2.prod.json",
-    "debug:dev": "cross-env NODE_ENV=dev node src/app.js",
-    "debug:stage": "cross-env NODE_ENV=stage node src/app.js",
-    "debug:prod": "cross-env NODE_ENV=prod node src/app.js"
+    "debug:dev": "cross-env NODE_ENV=dev nodex start",
+    "debug:stage": "cross-env NODE_ENV=stage nodex start",
+    "debug:prod": "cross-env NODE_ENV=prod nodex start",
+    "lint": "eslint . --fix"
   },
   "dependencies": {
-    "nodex-libs": "^2.1.4"
+    "nodex-cli": "^1.1.0",
+    "pm2": "^4.5.0"
   },
   "devDependencies": {
-    "cross-env": "^5.2.1",
-    "nodemon": "^2.0.2",
-    "pm2": "^4.2.3"
+    "cross-env": "^7.0.2",
+    "eslint": "^7.11.0",
+    "nodemon": "^2.0.4"
   },
   "repository": {
     "type": "git",
