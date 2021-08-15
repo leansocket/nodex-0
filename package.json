@@ -13,7 +13,7 @@
     "lint": "eslint . --fix"
   },
   "dependencies": {
-    "nodex-cli": "^1.1.0",
+    "nodex-cli": "^1.2.0",
     "pm2": "^4.5.0"
   },
   "devDependencies": {
